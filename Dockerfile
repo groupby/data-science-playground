@@ -10,4 +10,13 @@ RUN curl -o hadoop-2.8.1.tar.gz http://apache.mirror.vexxhost.com/hadoop/common/
 RUN tar -xzvf hadoop-2.8.1.tar.gz
 RUN mkdir /opt/hadoop-2.8.1/logs
 COPY hadoop-env.sh /opt/hadoop-2.8.1/etc/hadoop/hadoop-env.sh
+COPY core-site.xml /opt/hadoop-2.8.1/etc/hadoop/core-site.xml
+COPY hdfs-site.xml /opt/hadoop-2.8.1/etc/hadoop/hdfs-site.xml
 RUN service ssh start
+# COPY ssh key for root user and authorized_keys file???
+# RUN format the hdfs filesystem???
+# RUN start the namenode and datanode daemons???
+# RUN create the HDFS directories necessary for map reduce jobs???
+# COPY etc/hadoop/mapred-site.xml to container???
+# COPY etc/hadoop/yarn-site.xml to container???
+# EXPOSE the HDFS namenode and yarn resourcemanager web interface ports???
